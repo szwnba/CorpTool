@@ -40,16 +40,19 @@ namespace Ext.Net.Examples
 
             string path = HttpContext.Current.Server.MapPath("~/Examples/");
 
-            NodeCollection result = UIHelpers.BuildTreeLevel(new DirectoryInfo(path), 1, 3, examplesNode);
+            NodeCollection result = UIHelpers.BuildTreeLevel(new DirectoryInfo(path), 1, 2, examplesNode);
 
             if (root != null && root.ChildNodes.Count > 0)
             {
-                map.Save(HttpContext.Current.Server.MapPath("Web.sitemap"));
+                //map.Save(HttpContext.Current.Server.MapPath("Web.sitemap"));
             }
 
-            return result;
+            NodeCollection resultSiteMap = UIHelpers.BuildTreeLevel();
+            
+            return resultSiteMap;
         }
 
+  
         public static string ApplicationRoot
         {
             get
@@ -95,6 +98,45 @@ namespace Ext.Net.Examples
                 nodes.Add(node);
             }
 
+            return nodes;
+        }
+
+        private static NodeCollection BuildTreeLevel()
+        {
+            NodeCollection nodes = new NodeCollection(false);
+
+            //Load Web Site Map
+            XmlDocument document = new XmlDocument();
+            string path = HttpContext.Current.Server.MapPath("Web.sitemap");
+            document.Load(path);
+
+            //获取根节点  
+            XmlElement rootElement = document.DocumentElement;
+
+            //挨个查找其下的子节点  
+            foreach (XmlElement childElement in rootElement)
+            {
+                Node node = new Node();
+                node.Text = childElement.GetAttribute("title");
+                node.IconCls = childElement.GetAttribute("icon");
+                node.NodeID = BaseControl.GenerateID();
+
+                //获取孙节点列表  
+                foreach (XmlElement grandsonElement in childElement)
+                {
+                    Node childNode = new Node();
+                    childNode.Text = grandsonElement.GetAttribute("title");
+                    childNode.IconCls = grandsonElement.GetAttribute("icon");
+                    string url = grandsonElement.GetAttribute("url");
+                    childNode.NodeID = "e" + Math.Abs(url.ToLower().GetHashCode());
+                    childNode.CustomAttributes.Add(new ConfigItem("url", url));
+                    childNode.Leaf = true;
+                    node.Children.Add(childNode);
+                }
+
+                nodes.Add(node);
+
+            }  
             return nodes;
         }
 

@@ -13,17 +13,7 @@
         {
             this.ResourceManager1.DirectEventUrl = "/";
 
-            Theme theme = Ext.Net.Theme.Triton;
-
-            if (this.Session["Ext.Net.Theme"] != null)
-            {
-                theme = (Theme)this.Session["Ext.Net.Theme"];
-            }
-
-            ((Ext.Net.CheckMenuItem)this.FindControl(theme.ToString() + "ThemeItem")).Checked = true;
-
             this.TriggerField1.Focus();
-            this.CheckMenuItemScriptMode.Checked = Convert.ToBoolean(this.Session["Ext.Net.SourceFormatting"]);
 
             ResourceManager.RegisterControlResources<TagLabel>();
 
@@ -58,35 +48,6 @@
     public static int GetHashCode(string s)
     {
         return Math.Abs("/Examples".ConcatWith(s).ToLower().GetHashCode());
-    }
-
-    [DirectMethod]
-    public void SetTheme(string theme)
-    {
-        if (theme == "Blue")
-        {
-            theme = "Default";
-        }
-
-        theme = theme.Replace(" ", "");
-        this.Session["Ext.Net.Theme"] = (Theme)Enum.Parse(typeof(Theme), theme);
-    }
-
-    [DirectMethod]
-    public void ChangeScriptMode(bool debug)
-    {
-        if (debug)
-        {
-            this.Session["Ext.Net.ScriptMode"] = Ext.Net.ScriptMode.Debug;
-            this.Session["Ext.Net.SourceFormatting"] = true;
-        }
-        else
-        {
-            this.Session["Ext.Net.ScriptMode"] = Ext.Net.ScriptMode.Release;
-            this.Session["Ext.Net.SourceFormatting"] = false;
-        }
-
-        this.Response.Redirect("");
     }
 </script>
 
@@ -173,50 +134,12 @@
                     <header class="site-header" role="banner">
                         <nav class="top-navigation">
                             <div class="logo-container">
-                                <img src="resources/images/extdotnet-logo.svg" />
+                                <img src="resources/images/testlogo.png" />
                             </div>
                             <div class="navigation-bar">
-                                <div class="platform-selector-container">
-                                    <ext:Button
-                                        Cls="platform-selector"
-                                        runat="server"
-                                        Width="360px"
-                                        Text='<%# "Web Forms Examples (" + ExtNetVersion.Major + ")" %>'
-                                        Height="70px"
-                                        ArrowVisible="false">
-                                        <Menu >
-                                            <ext:Menu Cls="platform-selector-dropdown" Plain="true" runat="server">
-                                                <Items>
-                                                    <ext:MenuItem
-                                                        runat="server"
-                                                        Text='<%# "MVC Examples (" + ExtNetVersion.Major + ")" %>'
-                                                        Href="http://mvc.ext.net/"
-                                                        Height="70px"
-                                                        Width="358px"
-                                                        Padding="12"/>
-                                                    <ext:MenuItem
-                                                        runat="server"
-                                                        Text='<%# "Mobile Examples (" + mobileVersion + ")" %>'
-                                                        Href="http://mobile.ext.net/"
-                                                        Height="70px"
-                                                        Width="358px"
-                                                        Padding="12"/>
-                                                    <ext:MenuItem
-                                                        runat="server"
-                                                        Text='<%# "MVC Mobile Examples (" + mobileVersion + ")" %>'
-                                                        Href="http://mvc.mobile.ext.net/"
-                                                        Height="70px"
-                                                        Width="358px"
-                                                        Padding="12"/>
-                                                </Items>
-                                            </ext:Menu>
-                                        </Menu>
-                                    </ext:Button>
-                                </div>
-                                <input type="checkbox" id="menu-button-checkbox"/>
-                                <label id="menu-button" for="menu-button-checkbox">
+                          <%--      <label id="menu-button" for="menu-button-checkbox">
                                     <span></span>
-                                </label>
+                                </label>--%>
                             </div>
                         </nav>
                     </header>
@@ -321,46 +244,7 @@
                                                             <Click Handler="#{exampleTree}.collapseAll(false);" />
                                                         </Listeners>
                                                     </ext:MenuItem>
-
-                                                    <ext:MenuSeparator runat="server" />
-
-                                                    <ext:CheckMenuItem runat="server" Text="NEW Only">
-                                                        <Listeners>
-                                                            <CheckChange Fn="filterNewExamples" />
-                                                        </Listeners>
-                                                    </ext:CheckMenuItem>
-
-                                                    <ext:CheckMenuItem
-                                                        ID="CheckMenuItemScriptMode"
-                                                        runat="server"
-                                                        Text="Debug Mode">
-                                                        <Listeners>
-                                                            <CheckChange Handler="App.direct.ChangeScriptMode(checked);" />
-                                                        </Listeners>
-                                                    </ext:CheckMenuItem>
-
-                                                    <ext:MenuSeparator runat="server" />
-
-                                                    <ext:MenuItem runat="server" Text="Theme" Icon="Paintcan">
-                                                        <Menu>
-                                                            <ext:Menu runat="server" MinWidth="200">
-                                                                <Items>
-                                                                    <ext:CheckMenuItem ID="AriaThemeItem" runat="server" Text="Aria" Group="theme" />
-                                                                    <ext:CheckMenuItem ID="DefaultThemeItem" runat="server" Text="Blue" Group="theme" />
-                                                                    <ext:CheckMenuItem ID="GrayThemeItem" runat="server" Text="Gray" Group="theme" />
-                                                                    <ext:CheckMenuItem ID="CrispThemeItem" runat="server" Text="Crisp" Group="theme" />
-                                                                    <ext:CheckMenuItem ID="CrispTouchThemeItem" runat="server" Text="Crisp Touch" Group="theme" />
-                                                                    <ext:CheckMenuItem ID="NeptuneThemeItem" runat="server" Text="Neptune" Group="theme" />
-                                                                    <ext:CheckMenuItem ID="NeptuneTouchThemeItem" runat="server" Text="Neptune Touch" Group="theme" />
-                                                                    <ext:CheckMenuItem ID="TritonThemeItem" runat="server" Text="Triton" Group="theme" />
-                                                                </Items>
-                                                                <Listeners>
-                                                                    <Click Fn="themeChange" />
-                                                                </Listeners>
-                                                            </ext:Menu>
-                                                        </Menu>
-                                                    </ext:MenuItem>
-
+                                                    
                                                     <ext:MenuSeparator runat="server" />
 
                                                     <ext:MenuItem runat="server" Text="Search by" Icon="Find">
