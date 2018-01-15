@@ -1,27 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <siteMap>
-    <siteMapNode title="Getting Started" icon="fa fa-info-circle">
-      <siteMapNode title="Overview" description="Getting started with Ext.Net. Download, Project Setup and Hello World." url="/Getting_Started/Overview/" />
-      <siteMapNode title="Component Overview" description="Summary of Components with Ext.NET" url="/Getting_Started/Component_Overview/" />
-      <siteMapNode title="Release Documents" description="No description" url="/Getting_Started/Release_Documents/" />
+    <siteMapNode title="数据转换" icon="fa fa-info-circle">
+      <siteMapNode title="XML格式化" description="Getting started with Ext.Net. Download, Project Setup and Hello World." url="/Getting_Started/Overview/" />
+      <siteMapNode title="JSON 格式化" description="Summary of Components with Ext.NET" url="/Getting_Started/Component_Overview/" />
+      <siteMapNode title="对象转换" description="No description" url="/Getting_Started/Release_Documents/" />
     </siteMapNode>
-    <siteMapNode title="Buttons">
+    <siteMapNode title="COI ES" icon="fa fa-info-circle">
       <siteMapNode title="Default Button" description="No description" url="/Buttons/Default_Button/" />
-      <siteMapNode title="HyperlinkButton" description="No description" url="/Buttons/HyperlinkButton/" />
-      <siteMapNode title="ImageButton" description="No description" url="/Buttons/ImageButton/" />
-      <siteMapNode title="LoadingState" description="No description" url="/Buttons/LoadingState/" />
       <siteMapNode title="Overview" description="No description" url="/Buttons/Overview/" />
-      <siteMapNode title="Variations" description="No description" url="/Buttons/Variations/" />
+      <siteMapNode title="测试一下" description="No description" url="/Buttons/Test_Button/" />
+
     </siteMapNode>
-    <siteMapNode title="一键下单">
+    <siteMapNode title="一键下单" icon="fa fa-info-circle">
       <siteMapNode title="酒店预订" description="No description" url="/Calendar/Basic/" />
       <siteMapNode title="机票 预订" description="No description" url="/Calendar/Remote_Data/" />
     </siteMapNode>
-    <siteMapNode title="Draw">
-      <siteMapNode title="Actions" description="No description" url="/Draw/Actions/" />
-      <siteMapNode title="Animation" description="No description" url="/Draw/Animation/" />
-    </siteMapNode>
-    <siteMapNode title="Toolbar">
+    <siteMapNode title="共公工具" icon="fa fa-info-circle">
       <siteMapNode title="Context Menu" description="No description" url="/Toolbar/Context_Menu/" />
       <siteMapNode title="Flat Toolbar" description="No description" url="/Toolbar/Flat_Toolbar/" />
       <siteMapNode title="Overview" description="No description" url="/Toolbar/Overview/" />

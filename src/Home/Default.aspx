@@ -31,13 +31,13 @@
                             <img src="../resources/images/extnet-mobile-final.svg">
                         </div>
                         <div class="notification-text">
-                            The official release of <strong>Ext.NET Mobile</strong> is now available. Ext.NET Mobile is an ASP.NET component framework for building Phone and Tablet specific mobile web applications. <a href="http://ext.net/ext-net-mobile-final-now-available/">Read More</a>
+                           商旅测试工具  The official release of <strong>Ext.NET Mobile</strong> is now available. Ext.NET Mobile is an ASP.NET component framework for building Phone and Tablet specific mobile web applications. <a href="http://ext.net/ext-net-mobile-final-now-available/">Read More</a>
                         </div>
                     </div>
                 </div>
 
-                <h1>BUILD CROSS-BROWSER ENTERPRISE LEVEL APPS FASTER <span>WITH <span class="blue">100+ COMPONENTS AND 750+ EXAMPLES</span></span></h1>
-                <div class="welcome-cards">
+                <h1>商旅测试工具 BUILD CROSS-BROWSER ENTERPRISE LEVEL APPS FASTER <span>WITH <span class="blue">100+ COMPONENTS AND 750+ EXAMPLES</span></span></h1>
+            <%--    <div class="welcome-cards">
 
                     <div class="welcome-card">
                         <div class="welcome-card-icon">
@@ -78,9 +78,9 @@
                         </div>
                     </div>
 
-                </div>
+                </div>--%>
 
-                <h2>Popular Examples</h2>
+                <h2>常用工具网站连接</h2>
 
                 <ul class="popular-links">
                     <li><a href="/#/GridPanel/ArrayGrid/ArrayWithPaging/">GridPanel</a></li>

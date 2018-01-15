@@ -191,12 +191,13 @@ var makeTab = function (id, url, title) {
         id: id,
         tbar: [{
             text: "Source Code",
-            iconCls: "fa fa-code",
-            listeners: {
-                "click": function () {
-                    Ext.getCmp("w" + id).show(null);
-                }
-            }
+            iconCls: "fa fa-code"
+            //,
+            //listeners: {
+            //    "click": function () {
+            //        Ext.getCmp("w" + id).show(null);
+            //    }
+            //}
         },
         /*"-",
         {

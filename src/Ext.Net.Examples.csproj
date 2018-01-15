@@ -120,18 +120,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Examples\Buttons\LoadingState\config.xml" />
-    <Content Include="Examples\Buttons\LoadingState\Default.aspx" />
-    <Content Include="Examples\Draw\Actions\config.xml" />
+    <Content Include="Examples\Buttons\Test_Button\config.xml" />
+    <Content Include="Examples\Buttons\Test_Button\Default.aspx" />
     <Content Include="Examples\Getting_Started\Release_Documents\CHANGELOG\Default.aspx" />
     <Content Include="Examples\Getting_Started\Release_Documents\LICENSE\Default.aspx" />
     <Content Include="Examples\Getting_Started\Release_Documents\README\Default.aspx" />
     <Content Include="Examples\Buttons\Default_Button\config.xml" />
     <Content Include="Examples\Buttons\Default_Button\Default.aspx" />
-    <Content Include="Examples\Draw\Actions\Default.aspx" />
-    <Content Include="Examples\Draw\Animation\config.xml" />
-    <Content Include="Examples\Draw\Animation\Default.aspx" />
-    <Content Include="Examples\Draw\config.xml" />
     <Content Include="Examples\Toolbar\config.xml" />
     <Content Include="Examples\Toolbar\Context_Menu\config.xml" />
     <Content Include="Examples\Toolbar\Context_Menu\Default.aspx" />
@@ -224,7 +219,6 @@
     <None Include="resources\fonts\TitilliumText25L005-webfont.woff" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="RefreshSiteMap.aspx" />
     <Content Include="Home\Default.aspx" />
     <Content Include="resources\icons\application.png" />
     <Content Include="resources\icons\application_double.png" />
@@ -271,20 +265,7 @@
     <Content Include="resources\images\ext_net_badge.gif" />
     <Content Include="resources\images\ext_net_logo_small.gif" />
     <Content Include="resources\js\main.js" />
-    <Content Include="Examples\Buttons\ImageButton\button.gif" />
-    <Content Include="Examples\Buttons\ImageButton\config.xml" />
-    <Content Include="Examples\Buttons\ImageButton\Default.aspx" />
-    <Content Include="Examples\Buttons\ImageButton\disabled.gif" />
-    <Content Include="Examples\Buttons\ImageButton\overButton.gif" />
-    <Content Include="Examples\Buttons\ImageButton\pressed.gif" />
-    <Content Include="Examples\Buttons\HyperlinkButton\config.xml" />
-    <Content Include="Examples\Buttons\HyperlinkButton\Default.aspx" />
     <Content Include="Examples\Buttons\Overview\thumbnail.gif" />
-    <Content Include="Examples\Buttons\Variations\config.xml" />
-    <Content Include="Examples\Buttons\Variations\Default.aspx" />
-    <Content Include="Examples\Buttons\Variations\images\add32.gif" />
-    <Content Include="Examples\Buttons\Variations\images\add16.gif" />
-    <Content Include="Examples\Buttons\Variations\images\add24.gif" />
     <Content Include="Examples\Buttons\config.xml" />
     <Content Include="resources\js\examples.js" />
     <Content Include="resources\images\new.gif" />

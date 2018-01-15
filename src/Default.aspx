@@ -57,11 +57,11 @@
 <head runat="server">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Ext.NET Examples - ASP.NET (Web Forms + MVC) component framework integrating the cross-browser Sencha Ext JS JavaScript Library.</title>
+    <title>商旅测试工具</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="<%= "resources/css/main.css?" + ExtNetVersion.Full %>" />
-    <link rel="shortcut icon" href="favicon.ico" />
+<%--    <link rel="shortcut icon" href="favicon.ico" />--%>
 
     <script src="resources/js/perfect-scrollbar.min.js?0.6.8"></script>
     <script src="<%= "resources/js/main.js?" + ExtNetVersion.Full %>"></script>
@@ -217,7 +217,7 @@
                                         runat="server"
                                         EnableKeyEvents="true"
                                         Flex="1"
-                                        EmptyText="Filter Examples..."
+                                        EmptyText="过滤菜单..."
                                         RemoveClearTrigger="true">
                                         <Triggers>
                                             <ext:FieldTrigger Icon="Clear" Hidden="true" />
@@ -321,7 +321,7 @@
                     <ext:Panel
                         ID="tabHome"
                         runat="server"
-                        Title="Home"
+                        Title="首页"
                         HideMode="Offsets"
                         IconCls="fa fa-home">
                         <Loader runat="server" Mode="Frame" Url="Home/">
