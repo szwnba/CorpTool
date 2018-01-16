@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Ext.Net.Examples.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Corp.Tool.Web.Global" Language="C#" %>

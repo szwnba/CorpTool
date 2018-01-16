@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ext.Net;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -7,7 +8,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Xml;
 
-namespace Ext.Net.Examples
+namespace Corp.Tool.Web
 {
     public class UIHelpers
     {
@@ -38,7 +39,7 @@ namespace Ext.Net.Examples
                 rootCfg = null;
             }
 
-            string path = HttpContext.Current.Server.MapPath("~/Examples/");
+            string path = HttpContext.Current.Server.MapPath("~/Webforms/");
 
             NodeCollection result = UIHelpers.BuildTreeLevel(new DirectoryInfo(path), 1, 2, examplesNode);
 
@@ -66,7 +67,7 @@ namespace Ext.Net.Examples
 
         public static NodeCollection BuildFirstLevel()
         {
-            string path = HttpContext.Current.Server.MapPath("~/Examples/");
+            string path = HttpContext.Current.Server.MapPath("~/Webforms/");
             DirectoryInfo root = new DirectoryInfo(path);
             DirectoryInfo[] folders = root.GetDirectories();
             folders = UIHelpers.SortFolders(root, folders);
@@ -199,8 +200,8 @@ namespace Ext.Net.Examples
                     node.IconCls = iconCls;
                     string url = PhysicalToVirtual(folder.FullName + "/");
                     node.NodeID = "e" + Math.Abs(url.ToLower().GetHashCode());
-                    //node.Href = Regex.Replace(url, "^/Examples","");
-                    node.CustomAttributes.Add(new ConfigItem("url", Regex.Replace(url, "^/Examples", "")));
+                    //node.Href = Regex.Replace(url, "^/Webforms","");
+                    node.CustomAttributes.Add(new ConfigItem("url", Regex.Replace(url, "^/Webforms", "")));
 
                     node.Leaf = true;
 
@@ -228,12 +229,12 @@ namespace Ext.Net.Examples
         {
             if (rootCfg == null)
             {
-                rootCfg = new ExampleConfig(new DirectoryInfo(HttpContext.Current.Server.MapPath("~/Examples/")) + "\\config.xml", false);
+                rootCfg = new ExampleConfig(new DirectoryInfo(HttpContext.Current.Server.MapPath("~/Webforms/")) + "\\config.xml", false);
             }
 
             foreach (string newFolder in rootCfg.NewFolders)
             {
-                string newPath = string.Concat(HttpContext.Current.Server.MapPath("~/Examples/"), newFolder);
+                string newPath = string.Concat(HttpContext.Current.Server.MapPath("~/Webforms/"), newFolder);
 
                 if (newPath.StartsWith(folder, StringComparison.CurrentCultureIgnoreCase))
                 {
@@ -253,12 +254,12 @@ namespace Ext.Net.Examples
         {
             if (rootCfg == null)
             {
-                rootCfg = new ExampleConfig(new DirectoryInfo(HttpContext.Current.Server.MapPath("~/Examples/")) + "\\config.xml", false);
+                rootCfg = new ExampleConfig(new DirectoryInfo(HttpContext.Current.Server.MapPath("~/Webforms/")) + "\\config.xml", false);
             }
 
             foreach (string updFolder in rootCfg.UpdFolders)
             {
-                string updPath = string.Concat(HttpContext.Current.Server.MapPath("~/Examples/"), updFolder);
+                string updPath = string.Concat(HttpContext.Current.Server.MapPath("~/Webforms/"), updFolder);
 
                 if (updPath.StartsWith(folder, StringComparison.CurrentCultureIgnoreCase))
                 {

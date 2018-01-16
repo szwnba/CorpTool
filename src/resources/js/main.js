@@ -189,43 +189,15 @@ var makeTab = function (id, url, title) {
 
     tab = App.ExampleTabs.add(new Ext.Panel({
         id: id,
-        tbar: [{
-            text: "Source Code",
-            iconCls: "fa fa-code"
-            //,
-            //listeners: {
-            //    "click": function () {
-            //        Ext.getCmp("w" + id).show(null);
-            //    }
-            //}
-        },
-        /*"-",
-        {
-            ref : "../commentsBtn",
-            text : "Comments (*)",
-            iconCls : "icon-comments",
-            listeners : {
-                "render" : function () {
-                    Ext.net.DirectMethod.request({
-                        url          : "/ExampleLoader.ashx",
-                        cleanRequest : true,
-                        button       : this,
-                        params       : {
-                            url : url,
-                            action : "comments.count"
-                        },
-                        success      : function (result, response, extraParams, o) {
-                            o.button.setText("Comments ("+result+")");
-                        }
-                    });
+        tbar: [
+            {
+                text: "Refresh",
+                handler: function () {
+                    Ext.getCmp(id).reload(true)
                 },
-
-                "click" : function () {
-                    loadComments(this, url);
-                }
-            }
-        },*/
-        "->",
+                iconCls: "fa fa-refresh"
+            },
+        //"->",
         {
             text: "Direct Link",
             iconCls: "fa fa-link",
@@ -266,7 +238,7 @@ var makeTab = function (id, url, title) {
                         iconCls: "fa fa-external-link-square",
                         tooltip: "Open Example in the separate window using a direct link",
                         handler: function () {
-                            window.open(hostName + "/Examples" + url, "_blank");
+                            window.open(hostName + "/Webforms" + url, "_blank");
                         }
                     },
                     {
@@ -278,14 +250,6 @@ var makeTab = function (id, url, title) {
                     }]
                 }).show(null);
             }
-        },
-        "-",
-        {
-            text: "Refresh",
-            handler: function () {
-                Ext.getCmp(id).reload(true)
-            },
-            iconCls: "fa fa-refresh"
         }],
         title: title,
         tabTip: tabTip,
@@ -293,7 +257,7 @@ var makeTab = function (id, url, title) {
 
         loader: {
             scripts: true,
-            url: hostName + "/Examples" + url,
+            url: hostName + "/Webforms" + url,
             renderer: "frame",
             listeners: {
                 beforeload: function () {
@@ -473,7 +437,7 @@ var change = function (token) {
 };
 
 var getToken = function (url) {
-    var host = window.location.protocol + "//" + window.location.host + "/Examples";
+    var host = window.location.protocol + "//" + window.location.host + "/Webforms";
 
     return url.substr(host.length);
 };

@@ -24,7 +24,7 @@ namespace Ext.Net.Calendar.Demo
         [WebMethod]
         public string SaveAll(List<EventModel> events)
         {
-            EventsViewer uc = ((EventsViewer)UserControlRenderer.LoadControl("/Examples/Calendar/Overview/Shared/Common/EventsViewer.ascx"));
+            EventsViewer uc = ((EventsViewer)UserControlRenderer.LoadControl("/Webforms/Calendar/Overview/Shared/Common/EventsViewer.ascx"));
             return uc.ToScript(events);
         }
     }

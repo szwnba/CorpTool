@@ -6,12 +6,13 @@ using System.Web.Security;
 using System.Web.SessionState;
 using System.Threading;
 using System.Globalization;
+using Ext.Net;
 
-namespace Ext.Net.Examples
+namespace Corp.Tool.Web
 {
     public class ExtNetVersion
     {
-        public static Version Version = typeof(Ext.Net.Examples.Global).Assembly.GetName().Version;
+        public static Version Version = typeof(Corp.Tool.Web.Global).Assembly.GetName().Version;
 
         private static string rev = (Version.Revision == 0) ? "" : ("." + Version.Revision);
         private static string bld = (Version.Build == 0) ? "" : ("." + Version.Build + rev);
@@ -55,7 +56,7 @@ namespace Ext.Net.Examples
 
             if (!Ext.Net.ResourceManager.HasFactory("mywindow"))
             {
-                Ext.Net.ResourceManager.AddFactory("~/Examples/Miscellaneous/Factory/Basic/MyWindow.ascx", "mywindow", "My.Window");
+                Ext.Net.ResourceManager.AddFactory("~/Webforms/Miscellaneous/Factory/Basic/MyWindow.ascx", "mywindow", "My.Window");
             }
         }
 

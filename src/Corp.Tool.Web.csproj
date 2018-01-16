@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ext.Net.Examples</RootNamespace>
-    <AssemblyName>Ext.Net.Examples</AssemblyName>
+    <RootNamespace>Corp.Tool.Web</RootNamespace>
+    <AssemblyName>Corp.Tool.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <OldToolsVersion>4.0</OldToolsVersion>
     <UseIISExpress>true</UseIISExpress>
@@ -99,19 +99,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\UI\UIHelpers.cs" />
-    <Compile Include="ExampleLoader.ashx.cs">
-      <DependentUpon>ExampleLoader.ashx</DependentUpon>
-    </Compile>
-    <Compile Include="Examples\Calendar\Shared\Code\Data.cs" />
-    <Compile Include="Examples\Calendar\Shared\Code\RemoteService.asmx.cs">
+    <Compile Include="Webforms\Calendar\Shared\Code\Data.cs" />
+    <Compile Include="Webforms\Calendar\Shared\Code\RemoteService.asmx.cs">
       <DependentUpon>RemoteService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Examples\Calendar\Shared\Common\EventsViewer.ascx.cs">
+    <Compile Include="Webforms\Calendar\Shared\Common\EventsViewer.ascx.cs">
       <DependentUpon>EventsViewer.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Examples\Calendar\Shared\Common\EventsViewer.ascx.designer.cs">
+    <Compile Include="Webforms\Calendar\Shared\Common\EventsViewer.ascx.designer.cs">
       <DependentUpon>EventsViewer.ascx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -120,21 +117,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Examples\Buttons\Test_Button\config.xml" />
-    <Content Include="Examples\Buttons\Test_Button\Default.aspx" />
-    <Content Include="Examples\Getting_Started\Release_Documents\CHANGELOG\Default.aspx" />
-    <Content Include="Examples\Getting_Started\Release_Documents\LICENSE\Default.aspx" />
-    <Content Include="Examples\Getting_Started\Release_Documents\README\Default.aspx" />
-    <Content Include="Examples\Buttons\Default_Button\config.xml" />
-    <Content Include="Examples\Buttons\Default_Button\Default.aspx" />
-    <Content Include="Examples\Toolbar\config.xml" />
-    <Content Include="Examples\Toolbar\Context_Menu\config.xml" />
-    <Content Include="Examples\Toolbar\Context_Menu\Default.aspx" />
-    <Content Include="Examples\Toolbar\Flat_Toolbar\config.xml" />
-    <Content Include="Examples\Toolbar\Flat_Toolbar\Default.aspx" />
-    <Content Include="Examples\Toolbar\Overview\config.xml" />
-    <Content Include="Examples\Toolbar\Overview\Default.aspx" />
-    <Content Include="Examples\Toolbar\Overview\images\saving.gif" />
+    <Content Include="Webforms\Buttons\Test_Button\config.xml" />
+    <Content Include="Webforms\Buttons\Test_Button\Default.aspx" />
+    <Content Include="Webforms\Getting_Started\Release_Documents\CHANGELOG\Default.aspx" />
+    <Content Include="Webforms\Getting_Started\Release_Documents\LICENSE\Default.aspx" />
+    <Content Include="Webforms\Getting_Started\Release_Documents\README\Default.aspx" />
+    <Content Include="Webforms\Buttons\Default_Button\config.xml" />
+    <Content Include="Webforms\Buttons\Default_Button\Default.aspx" />
+    <Content Include="Webforms\Toolbar\config.xml" />
+    <Content Include="Webforms\Toolbar\Context_Menu\config.xml" />
+    <Content Include="Webforms\Toolbar\Context_Menu\Default.aspx" />
+    <Content Include="Webforms\Toolbar\Flat_Toolbar\config.xml" />
+    <Content Include="Webforms\Toolbar\Flat_Toolbar\Default.aspx" />
+    <Content Include="Webforms\Toolbar\Overview\config.xml" />
+    <Content Include="Webforms\Toolbar\Overview\Default.aspx" />
+    <Content Include="Webforms\Toolbar\Overview\images\saving.gif" />
     <Content Include="Global.asax" />
     <Content Include="resources\fonts\fontawesome-webfont.svg" />
     <Content Include="resources\fonts\LICENSE_TITILLIUMTEXT.txt" />
@@ -265,19 +262,20 @@
     <Content Include="resources\images\ext_net_badge.gif" />
     <Content Include="resources\images\ext_net_logo_small.gif" />
     <Content Include="resources\js\main.js" />
-    <Content Include="Examples\Buttons\Overview\thumbnail.gif" />
-    <Content Include="Examples\Buttons\config.xml" />
+    <Content Include="Webforms\Buttons\Overview\thumbnail.gif" />
+    <Content Include="Webforms\Buttons\config.xml" />
     <Content Include="resources\js\examples.js" />
     <Content Include="resources\images\new.gif" />
     <Content Include="resources\images\newgray.gif" />
-    <None Include="Web.sitemap" />
-    <Content Include="Examples\Buttons\Overview\arrow-down.gif" />
-    <Content Include="Examples\Buttons\Overview\config.xml" />
-    <Content Include="Examples\Buttons\Overview\Default.aspx" />
-    <Content Include="Examples\config.xml">
+    <None Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Webforms\Buttons\Overview\arrow-down.gif" />
+    <Content Include="Webforms\Buttons\Overview\config.xml" />
+    <Content Include="Webforms\Buttons\Overview\Default.aspx" />
+    <Content Include="Webforms\config.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="ExampleLoader.ashx" />
     <Content Include="Default.aspx" />
     <Content Include="resources\css\examples.css" />
     <Content Include="resources\css\main.css" />
@@ -291,42 +289,41 @@
     <Content Include="resources\images\title-background.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Examples\Calendar\config.xml" />
-    <Content Include="Examples\Calendar\Basic\config.xml" />
-    <Content Include="Examples\Calendar\Basic\Default.aspx" />
-    <Content Include="Examples\Calendar\Remote_Data\config.xml" />
-    <Content Include="Examples\Calendar\Shared\Code\RemoteService.asmx" />
-    <Content Include="Examples\Calendar\Shared\Common\EventsViewer.ascx" />
-    <Content Include="Examples\Calendar\Remote_Data\Default.aspx" />
-    <Content Include="Examples\Calendar\Remote_Data\override.js" />
-    <Content Include="Examples\Calendar\Shared\resources\css\main.css" />
-    <Content Include="Examples\Calendar\Shared\resources\js\common.js" />
+    <Content Include="Webforms\Calendar\config.xml" />
+    <Content Include="Webforms\Calendar\Basic\config.xml" />
+    <Content Include="Webforms\Calendar\Basic\Default.aspx" />
+    <Content Include="Webforms\Calendar\Remote_Data\config.xml" />
+    <Content Include="Webforms\Calendar\Shared\Code\RemoteService.asmx" />
+    <Content Include="Webforms\Calendar\Shared\Common\EventsViewer.ascx" />
+    <Content Include="Webforms\Calendar\Remote_Data\Default.aspx" />
+    <Content Include="Webforms\Calendar\Remote_Data\override.js" />
+    <Content Include="Webforms\Calendar\Shared\resources\css\main.css" />
+    <Content Include="Webforms\Calendar\Shared\resources\js\common.js" />
     <Content Include="404.aspx" />
     <Content Include="Code\UI\CommentsWindow.ascx" />
-    <Content Include="Examples\Getting_Started\config.xml" />
-    <Content Include="Examples\Getting_Started\Component_Overview\add16.gif" />
-    <Content Include="Examples\Getting_Started\Component_Overview\add24.gif" />
-    <Content Include="Examples\Getting_Started\Component_Overview\add32.gif" />
-    <Content Include="Examples\Getting_Started\Component_Overview\config.xml" />
-    <Content Include="Examples\Getting_Started\Component_Overview\Default.aspx" />
-    <Content Include="Examples\Getting_Started\Component_Overview\overview.css" />
-    <Content Include="Examples\Getting_Started\Component_Overview\themes.js" />
-    <Content Include="Examples\Getting_Started\Overview\config.xml" />
-    <Content Include="Examples\Getting_Started\Overview\Default.aspx" />
-    <Content Include="Examples\Getting_Started\Overview\thumbnail.png" />
+    <Content Include="Webforms\Getting_Started\config.xml" />
+    <Content Include="Webforms\Getting_Started\Component_Overview\add16.gif" />
+    <Content Include="Webforms\Getting_Started\Component_Overview\add24.gif" />
+    <Content Include="Webforms\Getting_Started\Component_Overview\add32.gif" />
+    <Content Include="Webforms\Getting_Started\Component_Overview\config.xml" />
+    <Content Include="Webforms\Getting_Started\Component_Overview\Default.aspx" />
+    <Content Include="Webforms\Getting_Started\Component_Overview\overview.css" />
+    <Content Include="Webforms\Getting_Started\Component_Overview\themes.js" />
+    <Content Include="Webforms\Getting_Started\Overview\config.xml" />
+    <Content Include="Webforms\Getting_Started\Overview\Default.aspx" />
+    <Content Include="Webforms\Getting_Started\Overview\thumbnail.png" />
     <Content Include="resources\icons\calendar.png" />
     <Content Include="resources\icons\comments.png" />
     <Content Include="resources\icons\comment_add.png" />
-    <Content Include="favicon.ico" />
+    <None Include="favicon.ico_bak" />
     <Content Include="resources\images\item-hd4.gif" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="conf\" />
     <Folder Include="Entity\" />
-    <Folder Include="Examples\Calendar\Shared\resources\images\" />
-    <Folder Include="Examples\Getting_Started\Overview\images\" />
     <Folder Include="resources\xml\" />
-    <Folder Include="Webforms\" />
+    <Folder Include="Webforms\Calendar\Shared\resources\images\" />
+    <Folder Include="Webforms\Getting_Started\Overview\images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

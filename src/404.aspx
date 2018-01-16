@@ -2,7 +2,7 @@
 
 <html>
 <head runat="server">
-    <title>The page not found : Ext.NET Examples</title>
+    <title>The page not found : Web Test Tool</title>
     <style>
         body {
             background-color    : #fff;

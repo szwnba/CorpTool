@@ -2,7 +2,7 @@
 
 <%@ Import Namespace="Ext.Net.Utilities" %>
 <%@ Import Namespace="System.Collections.Generic" %>
-<%@ Import Namespace="Ext.Net.Examples" %>
+<%@ Import Namespace="Corp.Tool.Web" %>
 
 <script runat="server">
     protected string mobileVersion = "4.1";
@@ -47,7 +47,7 @@
     [DirectMethod]
     public static int GetHashCode(string s)
     {
-        return Math.Abs("/Examples".ConcatWith(s).ToLower().GetHashCode());
+        return Math.Abs("/Webforms".ConcatWith(s).ToLower().GetHashCode());
     }
 </script>
 
@@ -57,7 +57,7 @@
 <head runat="server">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>商旅测试工具</title>
+    <title>Web Test Tool</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="<%= "resources/css/main.css?" + ExtNetVersion.Full %>" />
@@ -134,7 +134,7 @@
                     <header class="site-header" role="banner">
                         <nav class="top-navigation">
                             <div class="logo-container">
-                                <img src="resources/images/testlogo.png" />
+                                <img src="resources/images/testlogo.jpg" />
                             </div>
                             <div class="navigation-bar">
                           <%--      <label id="menu-button" for="menu-button-checkbox">
@@ -233,21 +233,22 @@
                                         <Menu>
                                             <ext:Menu runat="server" MinWidth="200">
                                                 <Items>
-                                                    <ext:MenuItem runat="server" Text="Expand All" IconCls="icon-expand-all">
+                                                    <ext:MenuItem runat="server" Text="展开菜单" IconCls="icon-expand-all">
                                                         <Listeners>
                                                             <Click Handler="#{exampleTree}.expandAll(false);" />
                                                         </Listeners>
                                                     </ext:MenuItem>
 
-                                                    <ext:MenuItem runat="server" Text="Collapse All" IconCls="icon-collapse-all">
+                                                    <ext:MenuItem runat="server" Text="收起菜单" IconCls="icon-collapse-all">
                                                         <Listeners>
                                                             <Click Handler="#{exampleTree}.collapseAll(false);" />
                                                         </Listeners>
                                                     </ext:MenuItem>
                                                     
-                                                    <ext:MenuSeparator runat="server" />
+                                                  <%-- 
+                                                         <ext:MenuSeparator runat="server" />
 
-                                                    <ext:MenuItem runat="server" Text="Search by" Icon="Find">
+                                                  <ext:MenuItem runat="server" Text="Search by" Icon="Find">
                                                         <Menu>
                                                             <ext:Menu runat="server" MinWidth="200">
                                                                 <Items>
@@ -265,7 +266,7 @@
                                                                 </Items>
                                                             </ext:Menu>
                                                         </Menu>
-                                                    </ext:MenuItem>
+                                                    </ext:MenuItem>--%>
 
                                                     <%--<ext:MenuItem runat="server" Text="Tag Cloud" Icon="WeatherClouds">
                                                         <Listeners>
