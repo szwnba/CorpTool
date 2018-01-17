@@ -27,37 +27,37 @@ namespace Corp.Tool.Web
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            //if (!Ext.Net.ResourceManager.HasFactory("mybutton"))
-            //{
-            //    Ext.Net.ResourceManager.AddFactory(delegate
-            //    {
-            //        var b = new Ext.Net.Button
-            //        {
-            //            Text = "Factory button",
-            //            Handler = "Ext.Msg.alert('Factory button', 'The button is clicked');",
-            //            Plugins =
-            //        {
-            //            new Badge
-            //            {
-            //                Text = "20"
-            //            }
-            //        },
+            if (!Ext.Net.ResourceManager.HasFactory("mybutton"))
+            {
+                Ext.Net.ResourceManager.AddFactory(delegate
+                {
+                    var b = new Ext.Net.Button
+                    {
+                        Text = "Factory button",
+                        Handler = "Ext.Msg.alert('Factory button', 'The button is clicked');",
+                        Plugins =
+                    {
+                        new Badge
+                        {
+                            Text = "20"
+                        }
+                    },
 
-            //            Factory = new FactoryConfig
-            //            {
-            //                Alias = "mybutton",
-            //                Instance = "My.Button"
-            //            }
-            //        };
+                        Factory = new FactoryConfig
+                        {
+                            Alias = "mybutton",
+                            Instance = "My.Button"
+                        }
+                    };
 
-            //        return b;
-            //    }, "mybutton", "My.Button");
-            //}
+                    return b;
+                }, "mybutton", "My.Button");
+            }
 
-            //if (!Ext.Net.ResourceManager.HasFactory("mywindow"))
-            //{
-            //    Ext.Net.ResourceManager.AddFactory("~/Webforms/Miscellaneous/Factory/Basic/MyWindow.ascx", "mywindow", "My.Window");
-            //}
+            if (!Ext.Net.ResourceManager.HasFactory("mywindow"))
+            {
+                Ext.Net.ResourceManager.AddFactory("~/Webforms/Miscellaneous/Factory/Basic/MyWindow.ascx", "mywindow", "My.Window");
+            }
         }
 
         protected void Session_Start(object sender, EventArgs e)

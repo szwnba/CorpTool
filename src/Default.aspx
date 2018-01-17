@@ -1,9 +1,8 @@
 <%@ Page Language="C#" %>
+
 <%@ Import Namespace="Ext.Net.Utilities" %>
 <%@ Import Namespace="System.Collections.Generic" %>
 <%@ Import Namespace="Corp.Tool.Web" %>
-
-
 
 <script runat="server">
     protected string mobileVersion = "4.1";
@@ -14,9 +13,9 @@
         {
             this.ResourceManager1.DirectEventUrl = "/";
 
-            //this.TriggerField1.Focus();
+            this.TriggerField1.Focus();
 
-            //ResourceManager.RegisterControlResources<TagLabel>();
+            ResourceManager.RegisterControlResources<TagLabel>();
 
             if (this.Request.QueryString["clearExamplesCache"] != null)
             {
@@ -79,7 +78,7 @@
     </script>
 </head>
 <body>
-    <ext:ResourceManager ID="ResourceManager1" runat="server"  />
+    <ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Triton" />
 
     <ext:History runat="server">
         <Listeners>
@@ -220,12 +219,12 @@
                                         Flex="1"
                                         EmptyText="¹ýÂË²Ëµ¥..."
                                         RemoveClearTrigger="true">
-                                     <%--   <Triggers>
+                                        <Triggers>
                                             <ext:FieldTrigger Icon="Clear" Hidden="true" />
-                                        </Triggers>--%>
+                                        </Triggers>
                                         <Listeners>
                                             <KeyUp Fn="keyUp" Buffer="500" />
-                                            <%--<TriggerClick Fn="clearFilter" />--%>
+                                            <TriggerClick Fn="clearFilter" />
                                             <SpecialKey Fn="filterSpecialKey" Delay="1" />
                                         </Listeners>
                                     </ext:TextField>
@@ -292,10 +291,10 @@
                                 <Root>
                                     <ext:Node NodeID="Root" Expanded="true" />
                                 </Root>
-                             <%--   <Fields>
+                                <Fields>
                                     <ext:ModelField Name="tags" />
                                     <ext:ModelField Name="flags" />
-                                </Fields>--%>
+                                </Fields>
                             </ext:TreeStore>
                         </Store>
                         <ColumnModel>
