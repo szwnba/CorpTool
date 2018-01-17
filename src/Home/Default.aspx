@@ -31,12 +31,15 @@
                             <img src="../resources/images/extnet-mobile-final.svg">
                         </div>
                         <div class="notification-text">
-                           Web Test Tool. The official release of <strong>Ext.NET Mobile</strong> is now available. Ext.NET Mobile is an ASP.NET component framework for building Phone and Tablet specific mobile web applications. <a href="http://ext.net/ext-net-mobile-final-now-available/">Read More</a>
+                           Web Test Tool是一个<strong>在线测试工具系统</strong>，集合了一些常用的测试工具.
                         </div>
                     </div>
                 </div>
 
-                <h1>Web Test Tool. BUILD CROSS-BROWSER ENTERPRISE LEVEL APPS FASTER <span>WITH <span class="blue">100+ COMPONENTS AND 750+ EXAMPLES</span></span></h1>
+                <h1> 更新日志： 
+                    <span> 2018-01-02<span class="blue">神盾加密解密工具</span></span>
+                    <span>2018-01-01<span class="blue">Redis值读取工具</span></span>
+                </h1>
             <%--    <div class="welcome-cards">
 
                     <div class="welcome-card">
@@ -79,11 +82,11 @@
                     </div>
 
                 </div>--%>
+                <h2></h2>
 
-                <h2>常用工具网站连接</h2>
-
+                <h3>常用工具网站连接</h3>
                 <ul class="popular-links">
-                    <li><a href="/#/GridPanel/ArrayGrid/ArrayWithPaging/">GridPanel</a></li>
+                    <li><a href="/#/GridPanel/ArrayGrid/ArrayWithPaging/">商旅一站式测试系统</a></li>
                     <li><a href="/#/Events/DirectEvents/Overview/">DirectEvents</a></li>
                     <li><a href="/#/Events/DirectMethods/Overview/">DirectMethods</a></li>
                     <li><a href="/#/Viewport/Basic/Built_in_Markup/">Viewport</a></li>

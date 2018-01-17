@@ -26,6 +26,8 @@
             // Makes dynamic data to server controls be bound to the page (like version on title).
             DataBind();
         }
+
+        this.exampleTree.ExpandAll();
     }
 
     protected void GetExamplesNodes(object sender, NodeLoadEventArgs e)
@@ -61,7 +63,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="<%= "resources/css/main.css?" + ExtNetVersion.Full %>" />
-<%--    <link rel="shortcut icon" href="favicon.ico" />--%>
+    <link rel="shortcut icon" href="favicon.ico" />
 
     <script src="resources/js/perfect-scrollbar.min.js?0.6.8"></script>
     <script src="<%= "resources/js/main.js?" + ExtNetVersion.Full %>"></script>
@@ -134,7 +136,7 @@
                     <header class="site-header" role="banner">
                         <nav class="top-navigation">
                             <div class="logo-container">
-                                <img src="resources/images/testlogo.jpg" />
+                                <img src="resources/images/testlogo.png" />
                             </div>
                             <div class="navigation-bar">
                           <%--      <label id="menu-button" for="menu-button-checkbox">

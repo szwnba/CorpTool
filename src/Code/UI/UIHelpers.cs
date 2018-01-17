@@ -39,14 +39,14 @@ namespace Corp.Tool.Web
                 rootCfg = null;
             }
 
-            string path = HttpContext.Current.Server.MapPath("~/Webforms/");
+            //string path = HttpContext.Current.Server.MapPath("~/Webforms/");
 
-            NodeCollection result = UIHelpers.BuildTreeLevel(new DirectoryInfo(path), 1, 2, examplesNode);
+            //NodeCollection result = UIHelpers.BuildTreeLevel(new DirectoryInfo(path), 1, 2, examplesNode);
 
-            if (root != null && root.ChildNodes.Count > 0)
-            {
-                //map.Save(HttpContext.Current.Server.MapPath("Web.sitemap"));
-            }
+            //if (root != null && root.ChildNodes.Count > 0)
+            //{
+            //    map.Save(HttpContext.Current.Server.MapPath("Web.sitemap"));
+            //}
 
             NodeCollection resultSiteMap = UIHelpers.BuildTreeLevel();
             

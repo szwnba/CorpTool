@@ -117,6 +117,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="favicon.ico" />
     <Content Include="Webforms\Buttons\Test_Button\config.xml" />
     <Content Include="Webforms\Buttons\Test_Button\Default.aspx" />
     <Content Include="Webforms\Getting_Started\Release_Documents\CHANGELOG\Default.aspx" />
@@ -315,7 +316,6 @@
     <Content Include="resources\icons\calendar.png" />
     <Content Include="resources\icons\comments.png" />
     <Content Include="resources\icons\comment_add.png" />
-    <None Include="favicon.ico_bak" />
     <Content Include="resources\images\item-hd4.gif" />
   </ItemGroup>
   <ItemGroup>
