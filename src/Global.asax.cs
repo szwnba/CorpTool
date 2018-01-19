@@ -78,7 +78,13 @@ namespace Corp.Tool.Web
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-
+            // extnet/unlicensed/un-js/ext.axd?v=41185  
+            // extnet/unlicensed/css/un-css/ext.axd?v=41185  
+            string url = this.Request.Url.ToString();
+            if (url.Contains("unlicensed"))
+            {
+                this.Response.End();
+            }  
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)

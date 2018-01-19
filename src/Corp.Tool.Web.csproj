@@ -125,6 +125,10 @@
     <Content Include="Webforms\Getting_Started\Release_Documents\README\Default.aspx" />
     <Content Include="Webforms\Buttons\Default_Button\config.xml" />
     <Content Include="Webforms\Buttons\Default_Button\Default.aspx" />
+    <Content Include="Webforms\DBTool\SearchOrder\Default.aspx" />
+    <Content Include="Webforms\DBTool\DBObjectGenerate\Default.aspx" />
+    <Content Include="Webforms\ProjectTool\Redis\Default.aspx" />
+    <Content Include="Webforms\ProjectTool\Zeus\Default.aspx" />
     <Content Include="Webforms\Toolbar\config.xml" />
     <Content Include="Webforms\Toolbar\Context_Menu\config.xml" />
     <Content Include="Webforms\Toolbar\Context_Menu\Default.aspx" />

@@ -28,18 +28,18 @@
                 <div class="extnet-notification">
                     <div class="notification-container">
                         <div class="notification-img">
-                            <img src="../resources/images/extnet-mobile-final.svg">
+                            <img src="../resources/images/banner.png">
                         </div>
                         <div class="notification-text">
-                           Web Test Tool是一个<strong>在线测试工具系统</strong>，集合了一些常用的测试工具.
+                           <strong>Test Tool Online</strong>是一个在线测试工具系统，集合了一些常用的测试工具.
                         </div>
                     </div>
                 </div>
 
-                <h1> 更新日志： 
-                    <span> 2018-01-02<span class="blue">神盾加密解密工具</span></span>
-                    <span>2018-01-01<span class="blue">Redis值读取工具</span></span>
-                </h1>
+                <h2> 最近更新： <br />
+                    <span> 2018-02-02<span class="blue">桌面端工具迁移至网页版</span></span><br />
+
+                </h2>
             <%--    <div class="welcome-cards">
 
                     <div class="welcome-card">
@@ -82,16 +82,12 @@
                     </div>
 
                 </div>--%>
-                <h2></h2>
-
-                <h3>常用工具网站连接</h3>
+                 <br />
+                <h3>其它常用网站连接</h3>
                 <ul class="popular-links">
-                    <li><a href="/#/GridPanel/ArrayGrid/ArrayWithPaging/">商旅一站式测试系统</a></li>
-                    <li><a href="/#/Events/DirectEvents/Overview/">DirectEvents</a></li>
-                    <li><a href="/#/Events/DirectMethods/Overview/">DirectMethods</a></li>
-                    <li><a href="/#/Viewport/Basic/Built_in_Markup/">Viewport</a></li>
-                    <li><a href="/#/XRender/Basic/Add_Items/">XRender</a></li>
-                    <li><a href="/#/Chart/Area/Basic/">Chart</a></li>
+                    <li><a href="http://ct.uat.qa.nt.ctripcorp.com/apitroubleshootingsys/">商旅一站式测试系统</a></li>
+                    <li><a href="http://ws.soa.dev.nt.ctripcorp.com/test-tool/">SOA 2.0服务测试工具</a></li>
+                    <li><a href="http://soa.dev.sh.ctriptravel.com/SOA.TESTTOOL/default.aspx">WebService Test Tool</a></li>
                 </ul>
 
             </div>
