@@ -1,9 +1,9 @@
-<%@ Page Language="C#" %>
+﻿<%@ Page Language="C#" %>
 
 <script runat="server">
-    protected void Button_Click(object sender, DirectEventArgs e)
+    protected void Page_Load(object sender, EventArgs e)
     {
-       X.Msg.Alert("DirectEvent", string.Format("Item - {0}", e.ExtraParams["Item"])).Show();
+      
     }
 </script>
 
@@ -11,143 +11,95 @@
 
 <html>
 <head runat="server">
-    <title>Button Control Variations - Ext.NET Examples</title>
-
+    <title>FormPanel - Ext.NET Examples</title>
     <link href="/resources/css/examples.css" rel="stylesheet" />
 
-    <style>
-        .custom-icon1 {
-            background-image : url(arrow-down.gif) !important;
-        }
-    </style>
+    <script>
+        var template = '<span style="color:{0};">{1}</span>';
+
+        var change = function (value) {
+            return Ext.String.format(template, (value > 0) ? "green" : "red", value);
+        };
+
+        var pctChange = function (value) {
+            return Ext.String.format(template, (value > 0) ? "green" : "red", value + "%");
+        };
+    </script>
 </head>
 <body>
-    <ext:ResourceManager runat="server" />
+    <form runat="server">
+        <ext:ResourceManager runat="server" />
 
-    <h1>Button Control Variations</h1>
+        <ext:FormPanel
+            runat="server"
+            Title="Company data"
+            Width="1500"
+            BodyPadding="5"
+            Layout="ColumnLayout">
 
-    <h2>1. Button with Listener</h2>
+            <FieldDefaults LabelAlign="Left" MsgTarget="Side" />
 
-    <ext:Button runat="server" Text="Click Me">
-        <Listeners>
-            <Click Handler="alert('Clicked');" />
-        </Listeners>
-    </ext:Button>
+            <Items>
+               
+                <ext:TextArea ID="TextArea1" runat="server" Width="600">
+                </ext:TextArea>
 
-    <h2>2. Button with DirectEvent</h2>
-
-    <ext:Button runat="server" Text="Click Me">
-        <DirectEvents>
-            <Click OnEvent="Button_Click">
-                <EventMask ShowMask="true" />
-                <ExtraParams>
-                    <ext:Parameter Name="Item" Value="One" />
-                </ExtraParams>
-            </Click>
-        </DirectEvents>
-    </ext:Button>
-
-    <h2>3. Button with Icon</h2>
-
-    <ext:Button runat="server" Text="Text" Icon="Add" />
-
-    <h2>4. Button with Custom Icon</h2>
-
-    <ext:Button runat="server" Text="Text" IconCls="custom-icon1" />
-
-    <h2>5. Button with QuickTip</h2>
-
-    <ext:Button runat="server" Text="Text">
-        <ToolTips>
-            <ext:ToolTip runat="server" Title="Title" Html="Description" />
-        </ToolTips>
-    </ext:Button>
-
-    <h2>6. Toggle Buttons</h2>
-
-    <ext:Button runat="server" Text="Button1" EnableToggle="true" ToggleGroup="Group1" Pressed="true" />
-    <ext:Button runat="server" Text="Button2" EnableToggle="true" ToggleGroup="Group1" />
-    <ext:Button runat="server" Text="Button3" EnableToggle="true" ToggleGroup="Group1" />
-
-    <h2>7. Button with menu</h2>
-
-    <ext:Button runat="server" Text="Text">
-        <Menu>
-            <ext:Menu runat="server">
+             <ext:Toolbar runat="server" Layout="Container" Width="110" Flat="false">
                 <Items>
-                    <ext:MenuItem runat="server" Text="Item 1" Icon="GroupAdd" />
-                    <ext:MenuItem runat="server" Text="Item 2" Icon="GroupDelete" />
-                    <ext:MenuItem runat="server" Text="Item 3" Icon="GroupEdit" />
+                    <ext:Button runat="server" Text="Test8 Fields" />
+                    <ext:Label runat="server"></ext:Label>
+                    <ext:Button runat="server" Text="Test9 Fields" />
                 </Items>
-            </ext:Menu>
-        </Menu>
-    </ext:Button>
+            </ext:Toolbar>
 
-    <h2>8. SplitButton with menu</h2>
+                    
 
-    <ext:SplitButton runat="server" Text="Text">
-        <Menu>
-            <ext:Menu runat="server">
-                <Items>
-                    <ext:MenuItem runat="server" Text="Item 1" Icon="GroupAdd" />
-                    <ext:MenuItem runat="server" Text="Item 2" Icon="GroupDelete" />
-                    <ext:MenuItem runat="server" Text="Item 3" Icon="GroupEdit" />
-                </Items>
-            </ext:Menu>
-        </Menu>
-    </ext:SplitButton>
+                <ext:TextArea ID="TextArea2" runat="server" Width="600">
+                </ext:TextArea>
 
-    <h2>9. SplitButton with custom drop down</h2>
 
-    <ext:SplitButton runat="server" Text="Text">
-        <Bin>
-            <ext:Panel runat="server" Width="150" Height="300" Layout="AccordionLayout" Floating="true">
-                <Items>
-                    <ext:Panel runat="server" Title="Item 1" />
-                    <ext:Panel runat="server" Title="Item 2" />
-                    <ext:Panel runat="server" Title="Item 3" />
-                    <ext:Panel runat="server" Title="Item 4" />
-                    <ext:Panel runat="server" Title="Item 5" />
-                </Items>
-                <BottomBar>
-                    <ext:Toolbar runat="server" ClassicButtonStyle="true">
-                        <Items>
-                            <ext:ToolbarFill runat="server" />
-                            <ext:Button runat="server" Text="Close" Handler="function () {this.up('panel').hide();}"/>
-                        </Items>
-                    </ext:Toolbar>
-                </BottomBar>
-            </ext:Panel>
-        </Bin>
-        <Listeners>
-            <ArrowClick Handler="this.bin[0].show(); this.bin[0].alignTo(this.el);">
-            </ArrowClick>
-        </Listeners>
-    </ext:SplitButton>
+                  
 
-    <h2>10. CycleButton</h2>
 
-    <ext:CycleButton runat="server" ShowText="true" PrependText="View As ">
-        <Menu>
-            <ext:Menu runat="server">
-                <Items>
-                    <ext:CheckMenuItem runat="server" Text="Text Only" Icon="Note" />
-                    <ext:CheckMenuItem runat="server" Text="Html" Icon="Html" Checked="true" />
-                </Items>
-            </ext:Menu>
-        </Menu>
-    </ext:CycleButton>
 
-    <h2>11. Flat Button</h2>
+                
+            </Items>
+            <Buttons>
+                <ext:Button runat="server" Text="Save To Grid">
+                    <Listeners>
+                        <Click Handler="var form = this.up('form'),
+                                            r = form.getForm().getRecord();
 
-    <ext:Button runat="server" Text="FlatButton" Icon="Accept" Flat="true" />
-
-    <h2>12. Custom Size Button</h2>
-
-    <ext:Button ID="Button1" runat="server" Text="128 x 128" Height="128" Width="128" />
-
-    <h2>13. Hyperlink</h2>
-
-    <ext:Hyperlink runat="server" Text="Hyperlink" Icon="World" />
+                                        if (r) {
+                                            form.getForm().updateRecord(form.down('grid').getSelectionModel().getLastSelected());
+                                        }" />
+                    </Listeners>
+                </ext:Button>
+                <ext:Button runat="server" Text="Reset Fields">
+                    <Listeners>
+                        <Click Handler="this.up('form').getForm().reset();" />
+                    </Listeners>
+                </ext:Button>
+                <ext:Button runat="server" Text="Get Values...">
+                    <Menu>
+                        <ext:Menu runat="server">
+                            <Items>
+                                <ext:MenuItem runat="server" Text="Object">
+                                    <Listeners>
+                                        <Click Handler="alert(Ext.encode(this.up('form').getForm().getValues()));" />
+                                    </Listeners>
+                                </ext:MenuItem>
+                                <ext:MenuItem runat="server" Text="String">
+                                    <Listeners>
+                                        <Click Handler="alert(this.up('form').getForm().getValues(true));" />
+                                    </Listeners>
+                                </ext:MenuItem>
+                            </Items>
+                        </ext:Menu>
+                    </Menu>
+                </ext:Button>
+            </Buttons>
+        </ext:FormPanel>
+    </form>
 </body>
 </html>

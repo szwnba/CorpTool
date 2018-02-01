@@ -39,12 +39,13 @@
                     ColumnWidth="1"
                     Title=" "
                     MarginSpec="0 0 0 10"
-                    ButtonAlign="Right">
+                    ButtonAlign="Right" >
                     <Defaults>
                         <ext:Parameter Name="LabelWidth" Value="115" />
                     </Defaults>
                     <Items>
                         <ext:ComboBox ID="cmbKeyType" runat="server" FieldLabel="KeyType" Width="350"></ext:ComboBox>
+                        <ext:DropDownField ID="dropdownKeyType" runat="server" FieldLabel="KeyType" Width="350"></ext:DropDownField>
                         <ext:TextField Name="txtInput" runat="server" FieldLabel="输入值" Width="350" />
                         <ext:TextArea ID="txtValue" runat="server" FieldLabel="Value" Width="520" Height="200">
                         </ext:TextArea>

@@ -22,6 +22,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -80,10 +81,6 @@
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -118,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="Webforms\Buttons\Overview\Default.aspx" />
     <Content Include="Webforms\Buttons\Test_Button\config.xml" />
     <Content Include="Webforms\Buttons\Test_Button\Default.aspx" />
     <Content Include="Webforms\Getting_Started\Release_Documents\CHANGELOG\Default.aspx" />
@@ -277,7 +275,6 @@
     </None>
     <Content Include="Webforms\Buttons\Overview\arrow-down.gif" />
     <Content Include="Webforms\Buttons\Overview\config.xml" />
-    <Content Include="Webforms\Buttons\Overview\Default.aspx" />
     <Content Include="Webforms\config.xml">
       <SubType>Designer</SubType>
     </Content>

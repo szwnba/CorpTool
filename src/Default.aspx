@@ -57,6 +57,9 @@
 
 <html>
 <head runat="server">
+
+
+	
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Test Tool Online</title>
@@ -65,8 +68,139 @@
     <link rel="stylesheet" href="<%= "resources/css/main.css?" + ExtNetVersion.Full %>" />
     <link rel="shortcut icon" href="favicon.ico" />
 
-    <script src="resources/js/perfect-scrollbar.min.js?0.6.8"></script>
-    <script src="<%= "resources/js/main.js?" + ExtNetVersion.Full %>"></script>
+   <link rel="stylesheet" href="Build.Ext.Net.extnet.unlicensed.css.un-embedded.css" />
+       <link rel="stylesheet" href="Build.Ext.Net.extnet.unlicensed.css.un-embedded2.css" />
+
+	<%--<script src="Build.Ext.Net.extnet.unlicensed.un.js"></script>--%>
+
+    <script>
+        //alert('Starting1');
+
+        $(document).ready(function () {
+            $("#unlicensed").destroy();
+        });
+
+    </script>
+
+    
+     <script>
+         Ext.onReady(function () {
+             Ext.Function.defer(function () {
+                 var el = Ext.DomHelper.append(document.body, {
+                     tag: "div",
+                     id: "unlicensed2",
+                     children: [{
+                         tag: "div",
+                         class: "ul-title-icon",
+                         children: [{
+                             tag: "img",
+                             width: 48,
+                             height: 48,
+                             src: Ext.net.ResourceMgr.resolveUrl("~/extnet/unlicensed/images/attention-png/ext.axd")
+                         }]
+                     }, {
+                         tag: "div",
+                         class: "ul-title",
+                         html: "UNLICENSEDXXXXX!"
+                     }]
+                 }, true);
+
+
+
+                 el.hide();
+
+                 el.alignTo(document, "br-br", [-20, -20]);
+
+                 //el.alignTo(document, "br-br", [-600, -600]);
+                 el.slideIn("b", {
+                     listeners: {
+                         afteranimate: function () {
+                             Ext.Function.defer(function () {
+                                 el.slideOut("b", {
+                                     listeners: {
+                                         afteranimate: function () {
+                                             Ext.Function.defer(el.destroy, 100, el);
+                                         }
+                                     }
+                                 });
+                             }, 20000);
+                         }
+                     }
+                 });
+                 el.hide();
+
+             }, 500, window);
+         });
+    </script>
+
+
+     <script>
+         Ext.onReady(function () {
+             Ext.Function.defer(function () {
+                 var el = Ext.DomHelper.append(document.body, {
+                     tag: "div",
+                     id: "unlicensed",
+                     children: [{
+                         tag: "div",
+                         class: "ul-title-icon",
+                         children: [{
+                             tag: "img",
+                             width: 48,
+                             height: 48,
+                             src: Ext.net.ResourceMgr.resolveUrl("~/extnet/unlicensed/images/attention-png/ext.axd")
+                         }]
+                     }, {
+                         tag: "div",
+                         class: "ul-title",
+                         html: "UNLICENSED!"
+                     }, {
+                         tag: "hr",
+                         class: "ul-hr"
+                     }, {
+                         tag: "div",
+                         class: "ul-body",
+                         html: "Your copy of Ext.NET is unlicensed!<br />Ext.NET can be used without a license only on a local development environment."
+                     }, {
+                         tag: "a",
+                         class: "ul-btn",
+                         href: "http://ext.net/store/",
+                         target: "_blank",
+                         html: "PURCHASE LICENSE"
+                     }, {
+                         tag: "div",
+                         class: "ul-footer",
+                         html: "Free Minor Version Upgrades Included!"
+                     }]
+                 }, true);
+
+                 //el.show();
+
+                 //el.hide();
+
+                 el.alignTo(document, "br-br", [-20, -20]);
+                 el.slideIn("b", {
+                     listeners: {
+                         afteranimate: function () {
+                             Ext.Function.defer(function () {
+                                 el.slideOut("b", {
+                                     listeners: {
+                                         afteranimate: function () {
+                                             Ext.Function.defer(el.destroy, 100, el);
+                                         }
+                                     }
+                                 });
+                             }, 20000);
+                         }
+                     }
+                 });
+            
+
+             }, 500, window);
+         });
+    </script>
+ 
+
+        <script src="<%= "resources/js/main.js?" + ExtNetVersion.Full %>"></script>
 
     <script>
         // A workaround for the GitHub issue #915
@@ -78,6 +212,107 @@
             }
         });
     </script>
+     <script>
+         //alert('Starting2');
+
+        
+         $(function () {
+
+             var clearAd = {
+                 //由于manifest文件匹配规则只有通配没有非功能，所以可在此处添加不想删除广告的页面
+                 checkUrl: function () {
+                     var Checkflag = 0,
+                         url = window.location.href;
+
+                     //手动添加不需要清除广告的域
+                     var notDel = [
+                         "www.baidu.com",
+                         "taobao.com",
+                         "tmall.com",
+                         "jd.com"
+                     ];
+
+                     //正则匹配
+                     for (var i = 0; i < notDel.length; i++) {
+                         var reg = new RegExp(notDel[i], "g");
+
+                         if (reg.test(url)) {
+                             console.log('This page does not clear ads.');
+                             break;
+                         } else {
+                             if (i == notDel.length - 1) {
+                                 Checkflag = 1;
+                             }
+                         }
+                     }
+
+                     if (Checkflag == 1) {
+                         this.clear();
+                         this.findSomeAdPossible();
+                     }
+                 },
+                 clear: function () {
+                     console.log('Clear Start');
+                     //此处可手动添加广告框id名，去除顽疾ad必备
+                     var ad_id_name = [
+                         "unlicensed",
+                         "layerd"
+                     ];
+
+                     //此处添加广告框类名
+                     var ad_css_name = [
+                         "cproIframe_u410704_3",
+                         "el",
+                         "hover_btn"
+                     ];
+
+                     for (var i = 0; i < ad_id_name.length; i++) {
+                         //使用remove删除节点，提升性能
+                         $('#' + ad_id_name[i]).remove();
+                     }
+
+                     for (var i = 0; i < ad_css_name.length; i++) {
+                         $('.' + ad_css_name[i]).remove();
+                     }
+                 },
+                 //简单的智能算法
+                 findSomeAdPossible: function () {
+                     var sap = $('div iframe'),
+                         ad_img = $('div script').parent().find('img,embed'),
+                         float_img = $('div object').parent().find('img,embed');
+
+                     this.arrayDel(sap, 360, 200);
+                     this.arrayDel(ad_img, 350, 150);
+                     this.arrayDel(float_img, 350, 150);
+                 },
+                 arrayDel: function (arr, conWidth, conHeight) {
+                     var len = arr.length;
+
+                     for (var i = 0; i < len; i++) {
+                         var self = arr.eq(i);
+
+                         if (self.width() <= conWidth || self.height() <= conHeight) {
+                             self.remove();
+                         }
+
+                     }
+                 },
+                 init: function () {
+                     this.checkUrl();
+                 }
+             }
+
+             $(document).ready(function () {
+                 clearAd.init();
+
+                 //为防止ajax异步延时加载的广告隔4s再清除一次
+                 setTimeout(function () {
+                     clearAd.init();
+                 }, 10000)
+             });
+         })
+
+</script>
 </head>
 <body>
     <ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Triton" />
@@ -341,5 +576,6 @@
             </ext:TabPanel>
         </Items>
     </ext:Viewport>
+
 </body>
 </html>

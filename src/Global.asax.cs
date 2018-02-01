@@ -76,14 +76,29 @@ namespace Corp.Tool.Web
 #endif // DEBUG
         }
 
+        /// <summary>
+        /// 输入指定内容到本地
+        /// </summary>
+        /// <param name="output"></param>
+        public static void OutputLog(string filename, string output)
+        {
+            System.IO.StreamWriter swOut = new System.IO.StreamWriter(@"F:\" + filename + ".txt", true, System.Text.Encoding.Default);
+            swOut.WriteLine(output);
+            swOut.Flush();
+            swOut.Close();
+        } 
+
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-            // extnet/unlicensed/un-js/ext.axd?v=41185  
+            
+             // extnet/unlicensed/un-js/ext.axd?v=41185  
             // extnet/unlicensed/css/un-css/ext.axd?v=41185  
             string url = this.Request.Url.ToString();
+            
+            //OutputLog("TextJS", url);
             if (url.Contains("unlicensed"))
             {
-                this.Response.End();
+              //  this.Response.End();
             }  
         }
 
