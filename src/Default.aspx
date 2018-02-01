@@ -88,7 +88,7 @@
              Ext.Function.defer(function () {
                  var el = Ext.DomHelper.append(document.body, {
                      tag: "div",
-                     id: "unlicensed2",
+                     id: "unlicensed",
                      children: [{
                          tag: "div",
                          class: "ul-title-icon"
@@ -102,13 +102,7 @@
 
 
                  el.hide();
-
                  el.alignTo(document, "br-br", [-20, -20]);
-
-                 //el.alignTo(document, "br-br", [-600, -600]);
-              
-                 //el.hide();
-
              }, 500, window);
          });
     </script>
