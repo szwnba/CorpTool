@@ -91,13 +91,7 @@
                      id: "unlicensed2",
                      children: [{
                          tag: "div",
-                         class: "ul-title-icon",
-                         children: [{
-                             tag: "img",
-                             width: 48,
-                             height: 48,
-                             src: Ext.net.ResourceMgr.resolveUrl("~/extnet/unlicensed/images/attention-png/ext.axd")
-                         }]
+                         class: "ul-title-icon"
                      }, {
                          tag: "div",
                          class: "ul-title",
@@ -112,22 +106,8 @@
                  el.alignTo(document, "br-br", [-20, -20]);
 
                  //el.alignTo(document, "br-br", [-600, -600]);
-                 el.slideIn("b", {
-                     listeners: {
-                         afteranimate: function () {
-                             Ext.Function.defer(function () {
-                                 el.slideOut("b", {
-                                     listeners: {
-                                         afteranimate: function () {
-                                             Ext.Function.defer(el.destroy, 100, el);
-                                         }
-                                     }
-                                 });
-                             }, 20000);
-                         }
-                     }
-                 });
-                 el.hide();
+              
+                 //el.hide();
 
              }, 500, window);
          });
